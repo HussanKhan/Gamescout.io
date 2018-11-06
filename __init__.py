@@ -282,9 +282,9 @@ def ref():
     game_name = request.args.get('gimg')
     return redirect("https://gamescout.io/info/{}".format(game_name), code=301)
 
-# Amazon API request
+# Sends master json file with all deals and image locals
 @app.route('/masterdeals', methods=["GET"])
-def amazon_api():
+def main_json():
     with open("/var/www/VgApp/vgdeals_production/Master_Deals.json", "r") as f:
         fil = json.load(f)
     return make_response(jsonify(fil), 200)
