@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Browse Hundreds of New Video Game Deals Everyday | GameScout.io</title>
+        <meta name="description" content="Check out hundreds of our gaming discounts. We search multiple gaming sites everyday and find the best deals. Our gaming discounts are updated everyday.">
+        <meta name="keywords" content="video game discount, video game sale, video game deal">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles2.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+        <meta name="google-site-verification" content="1Omh3iGsOcu_I6deZ7okx9UH1G6q2kkIRqwOyYwyrH0" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-79371248-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-79371248-3');
+        </script>
+    </head>
+
+    <body>
+        <div class="imgtitle">
+
+
+            <div id="side-menu" class="side-nav" data-bind="visible: $root.sidebarvis">
+                <a href="#" class="btn-close" data-bind="click: function(){$root.closesidebar();}, visible: $root.sidebarvis">&times;</a>
+                <div class="innerside" data-bind="foreach: $root.allgenres">
+                    <a href="" data-bind="text: genre, attr:{href: link}"></a>
+                </div>
+            </div>
+
+
+        </div>
+
+        </div>
+<div id="storewrap" class="storewrapper">
+
+        <div class="bg intro">
+            <nav>
+                <span class="open-slide" data-bind="click: function(){$root.opensidebar();}">
+                        <a href="#">
+                            <svg width="30" height="30">
+                                <path d="M0,5 30,5" stroke="#fff" stroke-width="5"/>
+                                <path d="M0,14 30,14" stroke="#fff" stroke-width="5"/>
+                                <path d="M0,23 30,23" stroke="#fff" stroke-width="5"/>
+                            </svg>
+                        </a>
+                </span>
+                <a href="/"><p class="site_name">GameScout</p></a>
+            </nav>
+
+            <h3 class="mobilesitemessage2">We Find Video Game Deals<br></h3>
+
+            <input type="text" name="" value="" class="searchbar2" placeholder="Search for a game..." data-bind="textInput: searchphrase">
+
+            <div class="search_matches" data-bind="foreach: $root.search_matches, visible: searchdis">
+                <div class="search_cont" data-bind="click: function(){$root.openweb(title)}">
+                    <p class="match_title" data-bind="text: title"></p>
+                    <p class="match_price">Discount Available!</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="filt_cont">
+            <button class="filt_button PC"type="button" name="button" data-bind="click: function(){filterplat('PC');}">PC</button>
+            <button class="filt_button PS4"type="button" name="button" data-bind="click: function(){filterplat('PS4');}">PS4</button>
+            <button class="filt_button XBOX"type="button" name="button" data-bind="click: function(){filterplat('XBOX');}">XBOX</button>
+            <button class="filt_button NINTENDO"type="button" name="button" data-bind="click: function(){filterplat('NINTENDO');}">Nintendo</button>
+        </div>
+
+        <div class="storebackground">
+            {% for gen in alldeals %}
+            <div class="ptext" id="{{ gen.genre }}">
+                <h3 class="genrecat">{{ gen.genre }}</h3>
+            </div>
+          <div class="{{ gen.genre.split(' ').join('_') + ' bg' }}">
+                <div class="displaycont">
+                    <button class="nextbutton" type="button" name="button" data-bind="click: function(){$root.scrollerr({{ gen.scroll_id }})}"><</button>
+                    {% for game in gen.gamelist %}
+                    <div class="storebar" id="{{ gen.scroll_id }}">
+                            <div class="storeitem" data-bind="click: function(){$root.openweb({{ game.title }})}">
+                                <div class="imgtitleprice">
+                                    <img class="lazyload gameimage" data-src="" width="194" height="266" data-bind="attr: {'data-src': {{ game.image }}}">
+                                    <div class="titleprice">
+                                        <p class="gametitle">{{ game.title }}</p>
+                                        <div class="sourceprice">
+                                            <p class="gamesource">{{ game.source }}</p>
+                                            <div class="{{ game.plat.split(' ')[0] }}">
+                                                <p class="gprice">{{ game.price }}</p>
+                                                <p class="gplat {{ game.plat.split(' ')[1] }}">{{  game.plat.split(' ')[1] }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    {% endfor %}
+                    <button class="nextbutton" type="button" name="button" data-bind="click: function(){$root.scrollerl({{ gen.scroll_id }})}">></button>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </body>
+
+    <script type='text/javascript' src="{{ url_for('static', filename='js/jquery-3.3.1.min.js') }}"></script>
+    <script type='text/javascript' src="{{ url_for('static', filename='js/knockout-3.4.2.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+    <script type='text/javascript' src="{{ url_for('static', filename='js/app2.js') }}"></script>
+</html>
