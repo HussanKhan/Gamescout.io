@@ -1,4 +1,4 @@
-# gamescout.io
+# https://gamescout.io/
 This site was designed to find and sort nearly a thousand video game deals everyday. The site includes images, user reviews, video reviews, and links to buy the products.
 
 I highly recommend you try out the site yourself.
