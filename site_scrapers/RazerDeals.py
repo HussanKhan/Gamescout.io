@@ -29,9 +29,6 @@ DBSession = sessionmaker(bind=engine)
 # Activating session
 session = DBSession()
 
-# Plain link
-# https://gamestore.razer.com/games/action/grand-theft-auto-v-792367.html
-# http://www.anrdoezrs.net/links/8836910/type/dlg/https://gamestore.razer.com/games/action/grand-theft-auto-v-792367.html
 class Razer():
 
     def __init__ (self):
@@ -75,7 +72,7 @@ class Razer():
 
                     game_url = game.find("a").get("href")
 
-                    url = "http://www.anrdoezrs.net/links/8836910/type/dlg/{}".format(game_url)
+                    url = "http://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}".format(game_url)
 
                     attr = Games(title=title + " " + "PC", price=price, genre="Other", image="none", source="Razer Gamestore", buy_link=url)
                     session.add(attr)

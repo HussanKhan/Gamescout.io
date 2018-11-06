@@ -65,7 +65,7 @@ class CDKEYSDEALS():
 
                     title = url1.get("title")
 
-                    url = url1.get("href") + "?mw_aref=vgdealsio"
+                    url = url1.get("href") + "?mw_aref=xxxxxxxxxxxxxx"
 
                     price = game.find("span", {"class": "price"}).text
 

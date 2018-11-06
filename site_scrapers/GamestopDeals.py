@@ -1,28 +1,3 @@
-# Starting link
-# https://www.gamestop.com/browse/pc?nav=2b6,28-xu0,13a-8c-162
-# https://www.gamestop.com/browse/pc?nav=2b12,28-xu0,13a-8c-162
-# https://www.gamestop.com/browse/pc?nav=2b24,28-xu0,13a-8c-162
-# https://www.gamestop.com/browse/pc?nav=2b36,28-xu0,13a-8c-162
-
-# USE 2b INCREMTN BY + 12 after first 6 increment
-
-# Format for linkshare
-# https://click.linksynergy.com/deeplink?id=Kkv1tcDJ/BU&mid=24348&murl=URLHERE
-# https://click.linksynergy.com/deeplink?id=Kkv1tcDJ/BU&mid=24348&murl=URLHERE
-
-# List of products
-# List class="products"
-
-# each product = class="product digital_product"
-            # title = class="product_info grid_12"
-              # a contains title and link class="ats-product-title-lnk"
-
-            # contains price class="purchase_info grid_6 omega"
-                # p tag class="pricing ats-product-price" contains price
-
-# nUMBER OF PAGES INFO
-# div class="pagination_controls"
-# get second strong
 #!/usr/bin/python3
 import sys
 import logging
@@ -134,7 +109,7 @@ class GameStop():
 
                     game_url = "https://www.gamestop.com" + game.find("a", {"class": "ats-product-title-lnk"}).get("href")
 
-                    url = "https://click.linksynergy.com/deeplink?id=Kkv1tcDJ/BU&mid=24348&murl={}".format(game_url)
+                    url = "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&murl={}".format(game_url)
 
                     attr = Games(title=title + " " + plat, price=price, genre="Other", image="none", source="GameStop", buy_link=url)
                     session.add(attr)

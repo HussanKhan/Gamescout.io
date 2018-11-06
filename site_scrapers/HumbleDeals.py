@@ -98,7 +98,7 @@ class HumbleBundle():
                     title = game.find("span", {"class": "entity-title "}).text
                     price = game.find("span", {"class": "price"}).text
 
-                    url = "https://www.humblebundle.com" + game.find("a", {"class": "entity-link js-entity-link"}).get("href") + "?partner=vgdeals&charity=1379"
+                    url = "https://www.humblebundle.com" + game.find("a", {"class": "entity-link js-entity-link"}).get("href") + "?partner=xxxxxxxxxxxxxxxxx&charity=1379"
 
                     attr = Games(title=title, price=price, genre="Other", image="NONE", source="Humble Bundle", buy_link=url)
                     session.add(attr)

@@ -1,24 +1,3 @@
-# Staring page
-# https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&browsedCategory=pcmcat1487698928729&cp=1&id=pcat17071&iht=n&ks=960&list=y&qp=currentoffers_facet%3DCurrent%20Deals~On%20Sale&sc=Global&st=categoryid%24pcmcat1487698928729&type=page&usc=All%20Categories
-
-# Page 2
-# https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&browsedCategory=pcmcat1487698928729&cp=2&id=pcat17071&iht=n&ks=960&list=y&qp=currentoffers_facet%3DCurrent%20Deals~On%20Sale&sc=Global&st=categoryid%24pcmcat1487698928729&type=page&usc=All%20Categories
-
-# Page 3
-# https://www.bestbuy.com/site/searchpage.jsp?_dyncharset=UTF-8&browsedCategory=pcmcat1487698928729&cp=3&id=pcat17071&iht=n&ks=960&list=y&qp=currentoffers_facet%3DCurrent%20Deals~On%20Sale&sc=Global&st=categoryid%24pcmcat1487698928729&type=page&usc=All%20Categories
-
-# LINKSHARE
-# https://click.linksynergy.com/deeplink?id=Kkv1tcDJ/BU&mid=38606&murl=URLHERE
-
-# PRODUCTS IN LI CLASS="sku-item"
-# h4 class="sku-header"
-# ^ INTHERE GET HREF WITH LINK (WHOLE) AND TEXT IS TITLE
-
-# div class="sku-list-item-price"
-# extract span text
-
-
-
 from bs4 import BeautifulSoup as soup
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -114,7 +93,7 @@ class BestBuy():
                     price = game.find("div", {"class": "priceView-hero-price priceView-purchase-price"})
                     price = price.find("span").text
 
-                    url = "https://click.linksynergy.com/deeplink?id=Kkv1tcDJ/BU&mid=38606&murl={}".format(game_url)
+                    url = "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&murl={}".format(game_url)
 
                     attr = Games(title=title, price=price, genre="Other", image="none", source="Best Buy", buy_link=url)
                     session.add(attr)
